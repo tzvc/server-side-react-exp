@@ -1,13 +1,15 @@
 import * as React from 'react';
 import SubTestComponent from './SubTestComponent';
 
-export default class TestComponent extends React.Component {
-  render() {
-    return (
-      <>
-        <div>Hello</div>
-        <SubTestComponent />
-      </>
-    );
-  }
+interface TestComponentProps {
+  language: 'en' | 'fr';
+}
+
+export default function TestComponent({ language = 'en' }: TestComponentProps) {
+  return (
+    <>
+      {language === 'en' ? <div>Hello</div> : <div>Bonjour</div>}
+      <SubTestComponent language={language} />
+    </>
+  );
 }

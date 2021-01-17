@@ -3,6 +3,6 @@ import ReactDOMServer from 'react-dom/server';
 import TestComponent from './components/TestComponent.js';
 
 export default function renderCmp(): string {
-  const cmpStr = ReactDOMServer.renderToString(<TestComponent />);
+  const cmpStr = ReactDOMServer.renderToString(<TestComponent language="fr" />);
   return cmpStr;
 }
